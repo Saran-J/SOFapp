@@ -15,6 +15,12 @@
 		EB229B601BA43454000EFB06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB229B5F1BA43454000EFB06 /* Images.xcassets */; };
 		EB229B631BA43454000EFB06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB229B611BA43454000EFB06 /* LaunchScreen.xib */; };
 		EB229B6F1BA43454000EFB06 /* SOFappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B6E1BA43454000EFB06 /* SOFappTests.m */; };
+		EB229B791BA43641000EFB06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B781BA43641000EFB06 /* CoreGraphics.framework */; };
+		EB229B7B1BA43648000EFB06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B7A1BA43648000EFB06 /* Foundation.framework */; };
+		EB229B7D1BA4364F000EFB06 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B7C1BA4364F000EFB06 /* MobileCoreServices.framework */; };
+		EB229B7F1BA43655000EFB06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B7E1BA43655000EFB06 /* QuartzCore.framework */; };
+		EB229B811BA4365B000EFB06 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B801BA4365B000EFB06 /* Security.framework */; };
+		EB229B831BA43661000EFB06 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B821BA43661000EFB06 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		EB229B681BA43454000EFB06 /* SOFappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOFappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB229B6D1BA43454000EFB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB229B6E1BA43454000EFB06 /* SOFappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOFappTests.m; sourceTree = "<group>"; };
+		EB229B781BA43641000EFB06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB229B7A1BA43648000EFB06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB229B7C1BA4364F000EFB06 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EB229B7E1BA43655000EFB06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EB229B801BA4365B000EFB06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EB229B821BA43661000EFB06 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB229B831BA43661000EFB06 /* SystemConfiguration.framework in Frameworks */,
+				EB229B811BA4365B000EFB06 /* Security.framework in Frameworks */,
+				EB229B7F1BA43655000EFB06 /* QuartzCore.framework in Frameworks */,
+				EB229B7D1BA4364F000EFB06 /* MobileCoreServices.framework in Frameworks */,
+				EB229B7B1BA43648000EFB06 /* Foundation.framework in Frameworks */,
+				EB229B791BA43641000EFB06 /* CoreGraphics.framework in Frameworks */,
 				CA94B72540A6F34F77D6B6E8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +95,12 @@
 		DD9B1C5BD44AEBF3DAB118FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB229B821BA43661000EFB06 /* SystemConfiguration.framework */,
+				EB229B801BA4365B000EFB06 /* Security.framework */,
+				EB229B7E1BA43655000EFB06 /* QuartzCore.framework */,
+				EB229B7C1BA4364F000EFB06 /* MobileCoreServices.framework */,
+				EB229B7A1BA43648000EFB06 /* Foundation.framework */,
+				EB229B781BA43641000EFB06 /* CoreGraphics.framework */,
 				51698944FEA71BAD06A76487 /* libPods.a */,
 			);
 			name = Frameworks;
