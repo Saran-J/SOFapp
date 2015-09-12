@@ -152,7 +152,7 @@
         <!--Question Detail-->
         <scene sceneID="7cc-0W-o4j">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="chG-bj-rcq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" automaticallyAdjustsScrollViewInsets="NO" id="chG-bj-rcq" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uda-p6-x2a"/>
                         <viewControllerLayoutGuide type="bottom" id="vPZ-hv-fQo"/>
@@ -218,6 +218,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="chG-bj-rcq" id="v8e-Q0-ZlY"/>
+                                    <outlet property="delegate" destination="chG-bj-rcq" id="fsZ-rE-u6M"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

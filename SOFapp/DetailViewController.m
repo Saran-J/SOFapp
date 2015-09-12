@@ -20,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     heightArray = [NSMutableArray array];
+    for (int i = 0;i<self.result.count;i++){
+        [heightArray addObject:@"44"];
+    }
+    
+    [self.tableView reloadData];
     // Do any additional setup after loading the view.
 }
 
@@ -46,6 +51,19 @@
     }else{
         cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
     }
+    UILabel *content = (UILabel *)[cell viewWithTag:100];
+    [content setText:obj.content];
+    content.lineBreakMode = NSLineBreakByWordWrapping;
+    content.numberOfLines = 0;
+    
+//    if([[heightArray objectAtIndex:indexPath.row] isEqualToString:@"44"]){
+        CGFloat contentHeight = content.frame.size.height;
+        CGFloat dif = [obj.type isEqualToString:@"code"] ? 35.0f : 16.0f;
+        heightArray[indexPath.row] = [NSString stringWithFormat:@"%f",contentHeight+dif];
+        
+//    }
+    [self.tableView reloadData];
+    
     return cell;
     
 }

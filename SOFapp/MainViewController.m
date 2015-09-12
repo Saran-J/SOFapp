@@ -13,6 +13,8 @@
 #import "SOFService.h"
 #import <SVProgressHUD.h>
 #import <NSString+HTML.h>
+#import "DetailObject.h"
+#import "DetailViewController.h"
 
 @interface MainViewController ()
 {
@@ -117,13 +119,23 @@
 {
     NSDictionary *obj = [self.result objectAtIndex:indexPath.row];
     
-    [SOFService getQuestionContentWithQuestionID:[NSString stringWithFormat:@"%@",[obj objectForKey:@"question_id"]]
-                                 completeHandler:^(NSString *content) {
-                                     NSLog(@"%@",[content stringByDecodingHTMLEntities]);
-                                 }
-                                error:^(NSString *error) {
-                                    NSLog(@"%@",error);
-                                }];
+    DetailObject *obj1 = [[DetailObject alloc] initWithType:@"content" Content:@"test\ntest"];
+    DetailObject *obj2 = [[DetailObject alloc] initWithType:@"code" Content:@"test\ntest\ntest"];
+    DetailObject *obj3 = [[DetailObject alloc] initWithType:@"content" Content:@"test\ntest\ntest\ntest"];
+    DetailObject *obj4 = [[DetailObject alloc] initWithType:@"code" Content:@"test\ntest\ntest\ntest\ntest"];
+    NSArray *result = @[obj1,obj2,obj3,obj4];
+    
+    DetailViewController *detail = (DetailViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"DetailVC"];
+    detail.result = [result copy];
+    [self.navigationController pushViewController:detail animated:YES];
+    
+//    [SOFService getQuestionContentWithQuestionID:[NSString stringWithFormat:@"%@",[obj objectForKey:@"question_id"]]
+//                                 completeHandler:^(NSString *content) {
+//                                     NSLog(@"%@",[content stringByDecodingHTMLEntities]);
+//                                 }
+//                                error:^(NSString *error) {
+//                                    NSLog(@"%@",error);
+//                                }];
 }
 
 - (void)didReceiveMemoryWarning {
