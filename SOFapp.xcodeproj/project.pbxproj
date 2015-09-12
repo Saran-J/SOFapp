@@ -10,7 +10,6 @@
 		CA94B72540A6F34F77D6B6E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51698944FEA71BAD06A76487 /* libPods.a */; };
 		EB229B551BA43453000EFB06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B541BA43453000EFB06 /* main.m */; };
 		EB229B581BA43453000EFB06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B571BA43453000EFB06 /* AppDelegate.m */; };
-		EB229B5B1BA43454000EFB06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B5A1BA43454000EFB06 /* ViewController.m */; };
 		EB229B5E1BA43454000EFB06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB229B5C1BA43454000EFB06 /* Main.storyboard */; };
 		EB229B601BA43454000EFB06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB229B5F1BA43454000EFB06 /* Images.xcassets */; };
 		EB229B631BA43454000EFB06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB229B611BA43454000EFB06 /* LaunchScreen.xib */; };
@@ -21,6 +20,10 @@
 		EB229B7F1BA43655000EFB06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B7E1BA43655000EFB06 /* QuartzCore.framework */; };
 		EB229B811BA4365B000EFB06 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B801BA4365B000EFB06 /* Security.framework */; };
 		EB229B831BA43661000EFB06 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB229B821BA43661000EFB06 /* SystemConfiguration.framework */; };
+		EB229B881BA48503000EFB06 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B871BA48503000EFB06 /* MainViewController.m */; };
+		EB229B8C1BA492A5000EFB06 /* rightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB229B8B1BA492A5000EFB06 /* rightIcon.png */; };
+		EB229B8E1BA49478000EFB06 /* rightIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB229B8D1BA49478000EFB06 /* rightIcon2.png */; };
+		EB229B921BA495EF000EFB06 /* SOFService.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B911BA495EF000EFB06 /* SOFService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +45,6 @@
 		EB229B541BA43453000EFB06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB229B561BA43453000EFB06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB229B571BA43453000EFB06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB229B591BA43453000EFB06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EB229B5A1BA43454000EFB06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EB229B5D1BA43454000EFB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB229B5F1BA43454000EFB06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB229B621BA43454000EFB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +57,12 @@
 		EB229B7E1BA43655000EFB06 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB229B801BA4365B000EFB06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EB229B821BA43661000EFB06 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EB229B861BA48503000EFB06 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EB229B871BA48503000EFB06 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		EB229B8B1BA492A5000EFB06 /* rightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightIcon.png; sourceTree = "<group>"; };
+		EB229B8D1BA49478000EFB06 /* rightIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightIcon2.png; sourceTree = "<group>"; };
+		EB229B901BA495EF000EFB06 /* SOFService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOFService.h; sourceTree = "<group>"; };
+		EB229B911BA495EF000EFB06 /* SOFService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOFService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +136,11 @@
 		EB229B511BA43453000EFB06 /* SOFapp */ = {
 			isa = PBXGroup;
 			children = (
+				EB229B8F1BA49547000EFB06 /* Control */,
+				EB229B8A1BA492A5000EFB06 /* media */,
+				EB229B851BA484D3000EFB06 /* ViewController */,
 				EB229B561BA43453000EFB06 /* AppDelegate.h */,
 				EB229B571BA43453000EFB06 /* AppDelegate.m */,
-				EB229B591BA43453000EFB06 /* ViewController.h */,
-				EB229B5A1BA43454000EFB06 /* ViewController.m */,
 				EB229B5C1BA43454000EFB06 /* Main.storyboard */,
 				EB229B5F1BA43454000EFB06 /* Images.xcassets */,
 				EB229B611BA43454000EFB06 /* LaunchScreen.xib */,
@@ -165,6 +173,33 @@
 				EB229B6D1BA43454000EFB06 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB229B851BA484D3000EFB06 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB229B861BA48503000EFB06 /* MainViewController.h */,
+				EB229B871BA48503000EFB06 /* MainViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		EB229B8A1BA492A5000EFB06 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				EB229B8D1BA49478000EFB06 /* rightIcon2.png */,
+				EB229B8B1BA492A5000EFB06 /* rightIcon.png */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
+		EB229B8F1BA49547000EFB06 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				EB229B901BA495EF000EFB06 /* SOFService.h */,
+				EB229B911BA495EF000EFB06 /* SOFService.m */,
+			);
+			name = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +284,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB229B8E1BA49478000EFB06 /* rightIcon2.png in Resources */,
 				EB229B5E1BA43454000EFB06 /* Main.storyboard in Resources */,
 				EB229B631BA43454000EFB06 /* LaunchScreen.xib in Resources */,
 				EB229B601BA43454000EFB06 /* Images.xcassets in Resources */,
+				EB229B8C1BA492A5000EFB06 /* rightIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +339,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB229B5B1BA43454000EFB06 /* ViewController.m in Sources */,
+				EB229B921BA495EF000EFB06 /* SOFService.m in Sources */,
 				EB229B581BA43453000EFB06 /* AppDelegate.m in Sources */,
+				EB229B881BA48503000EFB06 /* MainViewController.m in Sources */,
 				EB229B551BA43453000EFB06 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
