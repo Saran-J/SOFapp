@@ -12,6 +12,7 @@
 #import "MainViewController.h"
 #import "SOFService.h"
 #import <SVProgressHUD.h>
+#import <NSString+HTML.h>
 
 @interface MainViewController ()
 {
@@ -80,7 +81,7 @@
     
     NSDictionary *obj = [self.result objectAtIndex:indexPath.row];
     UILabel *detail = (UILabel*)[cell viewWithTag:100];
-    detail.text = [obj objectForKey:@"title"];
+    detail.text = [[obj objectForKey:@"title"] stringByConvertingHTMLToPlainText];
     
     UILabel *answers = (UILabel*)[cell viewWithTag:101];
     answers.text = [NSString stringWithFormat:@"%@ answers",[obj objectForKey:@"answer_count"]];
@@ -118,7 +119,7 @@
     
     [SOFService getQuestionContentWithQuestionID:[NSString stringWithFormat:@"%@",[obj objectForKey:@"question_id"]]
                                  completeHandler:^(NSString *content) {
-                                     NSLog(@"%@",[content stringByConvertingHTMLToPlainText]);
+                                     NSLog(@"%@",[content stringByDecodingHTMLEntities]);
                                  }
                                 error:^(NSString *error) {
                                     NSLog(@"%@",error);

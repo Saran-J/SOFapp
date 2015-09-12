@@ -24,6 +24,8 @@
 		EB229B8C1BA492A5000EFB06 /* rightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB229B8B1BA492A5000EFB06 /* rightIcon.png */; };
 		EB229B8E1BA49478000EFB06 /* rightIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB229B8D1BA49478000EFB06 /* rightIcon2.png */; };
 		EB229B921BA495EF000EFB06 /* SOFService.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B911BA495EF000EFB06 /* SOFService.m */; };
+		EB229B991BA4C64D000EFB06 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B981BA4C64D000EFB06 /* DetailViewController.m */; };
+		EB229B9D1BA4CA34000EFB06 /* DetailObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B9C1BA4CA34000EFB06 /* DetailObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		EB229B8D1BA49478000EFB06 /* rightIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightIcon2.png; sourceTree = "<group>"; };
 		EB229B901BA495EF000EFB06 /* SOFService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOFService.h; sourceTree = "<group>"; };
 		EB229B911BA495EF000EFB06 /* SOFService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOFService.m; sourceTree = "<group>"; };
+		EB229B971BA4C64D000EFB06 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		EB229B981BA4C64D000EFB06 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		EB229B9B1BA4CA34000EFB06 /* DetailObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailObject.h; sourceTree = "<group>"; };
+		EB229B9C1BA4CA34000EFB06 /* DetailObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 		EB229B511BA43453000EFB06 /* SOFapp */ = {
 			isa = PBXGroup;
 			children = (
+				EB229B9A1BA4CA27000EFB06 /* Object */,
 				EB229B8F1BA49547000EFB06 /* Control */,
 				EB229B8A1BA492A5000EFB06 /* media */,
 				EB229B851BA484D3000EFB06 /* ViewController */,
@@ -180,6 +187,8 @@
 			children = (
 				EB229B861BA48503000EFB06 /* MainViewController.h */,
 				EB229B871BA48503000EFB06 /* MainViewController.m */,
+				EB229B971BA4C64D000EFB06 /* DetailViewController.h */,
+				EB229B981BA4C64D000EFB06 /* DetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -200,6 +209,15 @@
 				EB229B911BA495EF000EFB06 /* SOFService.m */,
 			);
 			name = Control;
+			sourceTree = "<group>";
+		};
+		EB229B9A1BA4CA27000EFB06 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				EB229B9B1BA4CA34000EFB06 /* DetailObject.h */,
+				EB229B9C1BA4CA34000EFB06 /* DetailObject.m */,
+			);
+			name = Object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,10 +357,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB229B991BA4C64D000EFB06 /* DetailViewController.m in Sources */,
 				EB229B921BA495EF000EFB06 /* SOFService.m in Sources */,
 				EB229B581BA43453000EFB06 /* AppDelegate.m in Sources */,
 				EB229B881BA48503000EFB06 /* MainViewController.m in Sources */,
 				EB229B551BA43453000EFB06 /* main.m in Sources */,
+				EB229B9D1BA4CA34000EFB06 /* DetailObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
