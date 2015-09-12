@@ -10,5 +10,7 @@
 
 @interface MainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>;
 
+@property (nonatomic,strong) NSArray *result;
+
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 @end
