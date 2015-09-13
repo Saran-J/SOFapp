@@ -13,4 +13,6 @@
 @property (nonatomic,strong) NSArray *result;
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
+
+-(IBAction)onSearch:(id)sender;
 @end

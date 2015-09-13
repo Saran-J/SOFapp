@@ -8,11 +8,12 @@
 
 #import "SOFService.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import "DetailObject.h"
+#import <NSString+HTML.h>
 
 @implementation SOFService
 
-+(void)listAllQuestionWithFilter:(NSString *)filter
-                            Page:(NSString *)page
++(void)listAllQuestionOnPage:(NSString *)page
                  completeHandler:(void (^)(NSArray *,BOOL))completionHandler
                            error:(void (^)(NSString *))errorCallback
 {
@@ -49,5 +50,76 @@
         NSString *errorMessage = [error localizedDescription];
         errorCallback(errorMessage);
     }];
+}
+
++(void)getSearchResultFrom:(NSString *)keyword
+                      Page:(NSString *)page
+           completeHandler:(void (^)(NSArray *, BOOL))completionHandler
+                     error:(void (^)(NSString *))errorCallback
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *urlString = [NSString stringWithFormat:searchURL,page,keyword];
+    NSString *encoded = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [manager GET:encoded parameters:nil success:^(AFHTTPRequestOperation *operation, id   responseObject) {
+        NSArray *results = [responseObject objectForKey:@"items"];
+        BOOL isLast = [[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"has_more"]] isEqualToString:@"1"] ? false : true;
+        
+        completionHandler(results,isLast);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorMessage = [error localizedDescription];
+        errorCallback(errorMessage);
+    }];
+}
+
++(id)parseHtmlString:(NSString *)htmlString WithTag:(NSString*)tag{
+    NSScanner* scanner = [NSScanner scannerWithString:htmlString];
+    NSMutableArray *paragraphs = [[NSMutableArray alloc] init];
+    
+    
+    
+    NSString *startTag = [NSString stringWithFormat:@"<%@",tag];
+    NSString *endTag = [NSString stringWithFormat:@"</%@",tag];
+    
+    
+    [scanner scanUpToString:startTag intoString:nil];
+    while (![scanner isAtEnd]) {
+        [scanner scanUpToString:@">" intoString:nil];
+        [scanner scanString:@">" intoString:nil];
+        NSString * text = nil;
+        [scanner scanUpToString:endTag intoString:&text];
+        if (text) {
+            DetailObject *obj;
+            NSString *type = @"";
+            if([tag isEqualToString:@"p"]){
+                if(text.length > 7){
+                    if([[text substringToIndex:7] isEqualToString:@"<acode>"]){
+                        text = [text stringByReplacingOccurrencesOfString:@"<acode><code>" withString:@""];
+                        text = [text stringByReplacingOccurrencesOfString:@"</code></acode>" withString:@""];
+                        type = @"code";
+                    }else {
+                        text = [text stringByReplacingOccurrencesOfString:@"<acode><code>" withString:@"[code]"];
+                        text = [text stringByReplacingOccurrencesOfString:@"</code></acode>" withString:@"[code]"];
+                        type = @"content";
+                    }
+                }else {
+                    text = [text stringByReplacingOccurrencesOfString:@"<code>" withString:@"[code]"];
+                    text = [text stringByReplacingOccurrencesOfString:@"</code>" withString:@"[code]"];
+                    type = @"content";
+                }
+                
+//                text = [text stringByConvertingHTMLToPlainText];
+                
+
+                
+                obj = [[DetailObject alloc] initWithType:type Content:text];
+                
+            }
+            [paragraphs addObject:obj];
+        }
+        [scanner scanUpToString:startTag intoString:nil];
+    }
+    return paragraphs;
 }
 @end

@@ -26,6 +26,11 @@
 		EB229B921BA495EF000EFB06 /* SOFService.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B911BA495EF000EFB06 /* SOFService.m */; };
 		EB229B991BA4C64D000EFB06 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B981BA4C64D000EFB06 /* DetailViewController.m */; };
 		EB229B9D1BA4CA34000EFB06 /* DetailObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229B9C1BA4CA34000EFB06 /* DetailObject.m */; };
+		EB229B9F1BA56AB4000EFB06 /* searchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB229B9E1BA56AB4000EFB06 /* searchIcon.png */; };
+		EB229BA11BA56B9E000EFB06 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB229BA01BA56B9E000EFB06 /* bg.jpg */; };
+		EB229BA41BA56F39000EFB06 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BA31BA56F39000EFB06 /* SearchViewController.m */; };
+		EB229BA71BA58EB0000EFB06 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BA61BA58EB0000EFB06 /* ContentCell.m */; };
+		EB229BAA1BA58EDF000EFB06 /* CodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BA91BA58EDF000EFB06 /* CodeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,14 @@
 		EB229B981BA4C64D000EFB06 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		EB229B9B1BA4CA34000EFB06 /* DetailObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailObject.h; sourceTree = "<group>"; };
 		EB229B9C1BA4CA34000EFB06 /* DetailObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailObject.m; sourceTree = "<group>"; };
+		EB229B9E1BA56AB4000EFB06 /* searchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon.png; sourceTree = "<group>"; };
+		EB229BA01BA56B9E000EFB06 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		EB229BA21BA56F39000EFB06 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		EB229BA31BA56F39000EFB06 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		EB229BA51BA58EB0000EFB06 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		EB229BA61BA58EB0000EFB06 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
+		EB229BA81BA58EDF000EFB06 /* CodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeCell.h; sourceTree = "<group>"; };
+		EB229BA91BA58EDF000EFB06 /* CodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +202,8 @@
 				EB229B871BA48503000EFB06 /* MainViewController.m */,
 				EB229B971BA4C64D000EFB06 /* DetailViewController.h */,
 				EB229B981BA4C64D000EFB06 /* DetailViewController.m */,
+				EB229BA21BA56F39000EFB06 /* SearchViewController.h */,
+				EB229BA31BA56F39000EFB06 /* SearchViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -196,6 +211,8 @@
 		EB229B8A1BA492A5000EFB06 /* media */ = {
 			isa = PBXGroup;
 			children = (
+				EB229BA01BA56B9E000EFB06 /* bg.jpg */,
+				EB229B9E1BA56AB4000EFB06 /* searchIcon.png */,
 				EB229B8D1BA49478000EFB06 /* rightIcon2.png */,
 				EB229B8B1BA492A5000EFB06 /* rightIcon.png */,
 			);
@@ -216,6 +233,10 @@
 			children = (
 				EB229B9B1BA4CA34000EFB06 /* DetailObject.h */,
 				EB229B9C1BA4CA34000EFB06 /* DetailObject.m */,
+				EB229BA51BA58EB0000EFB06 /* ContentCell.h */,
+				EB229BA61BA58EB0000EFB06 /* ContentCell.m */,
+				EB229BA81BA58EDF000EFB06 /* CodeCell.h */,
+				EB229BA91BA58EDF000EFB06 /* CodeCell.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -304,7 +325,9 @@
 			files = (
 				EB229B8E1BA49478000EFB06 /* rightIcon2.png in Resources */,
 				EB229B5E1BA43454000EFB06 /* Main.storyboard in Resources */,
+				EB229B9F1BA56AB4000EFB06 /* searchIcon.png in Resources */,
 				EB229B631BA43454000EFB06 /* LaunchScreen.xib in Resources */,
+				EB229BA11BA56B9E000EFB06 /* bg.jpg in Resources */,
 				EB229B601BA43454000EFB06 /* Images.xcassets in Resources */,
 				EB229B8C1BA492A5000EFB06 /* rightIcon.png in Resources */,
 			);
@@ -360,9 +383,12 @@
 				EB229B991BA4C64D000EFB06 /* DetailViewController.m in Sources */,
 				EB229B921BA495EF000EFB06 /* SOFService.m in Sources */,
 				EB229B581BA43453000EFB06 /* AppDelegate.m in Sources */,
+				EB229BA71BA58EB0000EFB06 /* ContentCell.m in Sources */,
 				EB229B881BA48503000EFB06 /* MainViewController.m in Sources */,
 				EB229B551BA43453000EFB06 /* main.m in Sources */,
+				EB229BAA1BA58EDF000EFB06 /* CodeCell.m in Sources */,
 				EB229B9D1BA4CA34000EFB06 /* DetailObject.m in Sources */,
+				EB229BA41BA56F39000EFB06 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
