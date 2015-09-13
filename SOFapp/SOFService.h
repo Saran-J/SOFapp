@@ -31,4 +31,5 @@
                      error:(void (^)(NSString *error))errorCallback;
 
 +(id)parseHtmlString:(NSString *)htmlString WithTag:(NSString*)tag;
++(NSString *)convertStringInCodeTagToPlaintext:(NSString *)content;
 @end

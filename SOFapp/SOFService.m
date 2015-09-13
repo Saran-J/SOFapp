@@ -122,4 +122,40 @@
     }
     return paragraphs;
 }
+
++(NSString *)convertStringInCodeTagToPlaintext:(NSString *)content
+{
+    NSLog(@"content = %@",content);
+    NSString *newContent = [content stringByReplacingOccurrencesOfString:@"\n" withString:@"(n)"];
+    NSMutableArray *texts = [[newContent componentsSeparatedByString:@"<code>"] mutableCopy];
+    
+    NSLog(@"length2 = %lu",(unsigned long)texts.count);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\<code>(.*?)\\</code>" options:NSRegularExpressionCaseInsensitive error:NULL];
+    
+    
+    for(int i=1;i<texts.count;i++){
+        NSString *currentString = [texts objectAtIndex:i];
+        
+        currentString = [NSString stringWithFormat:@"<code>%@",currentString];
+        NSLog(@"currentString = %@",currentString);
+        NSArray *myArray = [regex matchesInString:currentString options:0 range:NSMakeRange(0, [currentString length])] ;
+        NSLog(@"myarray = %lu",(unsigned long)myArray.count);
+        for (NSTextCheckingResult *match in myArray) {
+            NSRange matchRange = [match rangeAtIndex:1];
+            NSString *newString = [currentString substringWithRange:matchRange];
+            
+            newString = [newString stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+            newString = [newString stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+            NSLog(@"%@",newString);
+            currentString = [currentString stringByReplacingCharactersInRange:matchRange withString:newString];
+            [texts setObject:currentString atIndexedSubscript:i];
+            
+        }
+    }
+    NSString * result = [[texts valueForKey:@"description"] componentsJoinedByString:@""];
+    result = [result stringByReplacingOccurrencesOfString:@"(n)" withString:@"\n"];
+    return result;
+}
+
+
 @end

@@ -12,6 +12,7 @@
 #import <NSString+HTML.h>
 #import "DetailObject.h"
 #import "DetailViewController.h"
+#import "WebViewQuestionViewController.h"
 
 @interface SearchViewController ()
 {
@@ -26,6 +27,8 @@
     
     [self.tableView setHidden:YES];
     [super viewDidLoad];
+    
+    [self.search becomeFirstResponder];
     
     
     page = 1;
@@ -130,13 +133,16 @@
     [SOFService getQuestionContentWithQuestionID:[NSString stringWithFormat:@"%@",[obj objectForKey:@"question_id"]]
                                  completeHandler:^(NSString *content) {
                                      NSString *contentString = [content stringByDecodingHTMLEntities];
-                                     contentString = [contentString stringByReplacingOccurrencesOfString:@"<code" withString:@"<acode><code"];
-                                     contentString = [contentString stringByReplacingOccurrencesOfString:@"</code>" withString:@"</code></acode>"];
+//                                     contentString = [contentString stringByReplacingOccurrencesOfString:@"<code" withString:@"<acode><code"];
+//                                     contentString = [contentString stringByReplacingOccurrencesOfString:@"</code>" withString:@"</code></acode>"];
                                      
-                                     NSArray *result = [SOFService parseHtmlString:contentString WithTag:@"p"];
-                                     DetailViewController *detail = (DetailViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"DetailVC"];
-                                     detail.result = [result copy];
-                                     [self.navigationController pushViewController:detail animated:YES];
+                                     WebViewQuestionViewController *web = (WebViewQuestionViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WebviewVC"];
+                                     web.content = contentString;
+                                     [self.navigationController pushViewController:web animated:YES];
+                                     //                                     NSArray *result = [SOFService parseHtmlString:contentString WithTag:@"p"];
+                                     //                                     DetailViewController *detail = (DetailViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"DetailVC"];
+                                     //                                     detail.result = [result copy];
+                                     //                                     [self.navigationController pushViewController:detail animated:YES];
                                      [SVProgressHUD dismiss];
                                      
                                  }

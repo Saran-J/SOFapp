@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="qZ0-7M-z9p" kind="relationship" relationship="rootViewController" id="Z4U-lN-fIB"/>
+                        <segue destination="qZ0-7M-z9p" kind="relationship" relationship="rootViewController" id="2XR-kl-utO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgy-kH-ntv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,6 +358,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY5-UT-luh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1157" y="319"/>
+        </scene>
+        <!--Question Detail Webview-->
+        <scene sceneID="dfS-Bn-FvP">
+            <objects>
+                <viewController storyboardIdentifier="WebviewVC" id="7Gz-mU-XOp" customClass="WebViewQuestionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fmx-WA-v9L"/>
+                        <viewControllerLayoutGuide type="bottom" id="JnY-LG-3kx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ktc-cW-Q0o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ps6-Mh-3oB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48t-fL-acn">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Gz-mU-XOp" id="agu-Xx-vmi"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="48t-fL-acn" secondAttribute="trailing" id="1qd-Lu-Uok"/>
+                            <constraint firstItem="Ps6-Mh-3oB" firstAttribute="leading" secondItem="ktc-cW-Q0o" secondAttribute="leading" id="GfW-g0-wEt"/>
+                            <constraint firstItem="Ps6-Mh-3oB" firstAttribute="top" secondItem="ktc-cW-Q0o" secondAttribute="top" id="Orl-OD-txn"/>
+                            <constraint firstItem="JnY-LG-3kx" firstAttribute="top" secondItem="Ps6-Mh-3oB" secondAttribute="bottom" id="PmY-ue-WDW"/>
+                            <constraint firstItem="JnY-LG-3kx" firstAttribute="top" secondItem="48t-fL-acn" secondAttribute="bottom" id="Rjj-4e-a1P"/>
+                            <constraint firstItem="48t-fL-acn" firstAttribute="top" secondItem="Fmx-WA-v9L" secondAttribute="bottom" id="Rzi-L0-Q8M"/>
+                            <constraint firstItem="48t-fL-acn" firstAttribute="leading" secondItem="ktc-cW-Q0o" secondAttribute="leading" id="lQ3-HL-Dxi"/>
+                            <constraint firstAttribute="trailing" secondItem="Ps6-Mh-3oB" secondAttribute="trailing" id="t10-SN-SCN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Question Detail Webview" id="4Ic-Uc-d2W"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="web" destination="48t-fL-acn" id="qar-vk-vml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rvh-gc-ZZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="985"/>
         </scene>
     </scenes>
     <resources>

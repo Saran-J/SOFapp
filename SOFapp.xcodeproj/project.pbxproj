@@ -31,6 +31,7 @@
 		EB229BA41BA56F39000EFB06 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BA31BA56F39000EFB06 /* SearchViewController.m */; };
 		EB229BA71BA58EB0000EFB06 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BA61BA58EB0000EFB06 /* ContentCell.m */; };
 		EB229BAA1BA58EDF000EFB06 /* CodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BA91BA58EDF000EFB06 /* CodeCell.m */; };
+		EB229BDF1BA5E61C000EFB06 /* WebViewQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB229BDE1BA5E61C000EFB06 /* WebViewQuestionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		EB229BA61BA58EB0000EFB06 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 		EB229BA81BA58EDF000EFB06 /* CodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeCell.h; sourceTree = "<group>"; };
 		EB229BA91BA58EDF000EFB06 /* CodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeCell.m; sourceTree = "<group>"; };
+		EB229BDD1BA5E61C000EFB06 /* WebViewQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewQuestionViewController.h; sourceTree = "<group>"; };
+		EB229BDE1BA5E61C000EFB06 /* WebViewQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewQuestionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				EB229B981BA4C64D000EFB06 /* DetailViewController.m */,
 				EB229BA21BA56F39000EFB06 /* SearchViewController.h */,
 				EB229BA31BA56F39000EFB06 /* SearchViewController.m */,
+				EB229BDD1BA5E61C000EFB06 /* WebViewQuestionViewController.h */,
+				EB229BDE1BA5E61C000EFB06 /* WebViewQuestionViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				EB229B921BA495EF000EFB06 /* SOFService.m in Sources */,
 				EB229B581BA43453000EFB06 /* AppDelegate.m in Sources */,
 				EB229BA71BA58EB0000EFB06 /* ContentCell.m in Sources */,
+				EB229BDF1BA5E61C000EFB06 /* WebViewQuestionViewController.m in Sources */,
 				EB229B881BA48503000EFB06 /* MainViewController.m in Sources */,
 				EB229B551BA43453000EFB06 /* main.m in Sources */,
 				EB229BAA1BA58EDF000EFB06 /* CodeCell.m in Sources */,
