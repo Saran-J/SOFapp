@@ -15,12 +15,16 @@
 #import <NSString+HTML.h>
 #import "DetailObject.h"
 #import "DetailViewController.h"
+#import <MWFeedParser.h>
 
 @interface MainViewController ()
 {
     int page;
     BOOL lastpage;
     BOOL viewInit;
+    
+    
+    NSMutableArray *parsedItems;
 }
 @end
 
@@ -30,6 +34,8 @@
     
     [self.tableView setHidden:YES];
     [super viewDidLoad];
+    parsedItems = [NSMutableArray array];
+    
     page = 1;
     lastpage = false;
     viewInit = false;
@@ -118,24 +124,80 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *obj = [self.result objectAtIndex:indexPath.row];
+    NSLog(@"question link = %@",[obj objectForKey:@"link"]);
     
-    DetailObject *obj1 = [[DetailObject alloc] initWithType:@"content" Content:@"test\ntest"];
-    DetailObject *obj2 = [[DetailObject alloc] initWithType:@"code" Content:@"test\ntest\ntest"];
-    DetailObject *obj3 = [[DetailObject alloc] initWithType:@"content" Content:@"test\ntest\ntest\ntest"];
-    DetailObject *obj4 = [[DetailObject alloc] initWithType:@"code" Content:@"test\ntest\ntest\ntest\ntest"];
-    NSArray *result = @[obj1,obj2,obj3,obj4];
     
-    DetailViewController *detail = (DetailViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"DetailVC"];
-    detail.result = [result copy];
-    [self.navigationController pushViewController:detail animated:YES];
+//    DetailObject *obj1 = [[DetailObject alloc] initWithType:@"content" Content:@"test\ntest"];
+//    DetailObject *obj2 = [[DetailObject alloc] initWithType:@"code" Content:@"test\ntest\ntest"];
+//    DetailObject *obj3 = [[DetailObject alloc] initWithType:@"content" Content:@"test\ntest\ntest\ntest"];
+//    DetailObject *obj4 = [[DetailObject alloc] initWithType:@"code" Content:@"test\ntest\ntest\ntest\ntest"];
+//    NSArray *result = @[obj1,obj2,obj3,obj4];
+//    
     
-//    [SOFService getQuestionContentWithQuestionID:[NSString stringWithFormat:@"%@",[obj objectForKey:@"question_id"]]
-//                                 completeHandler:^(NSString *content) {
-//                                     NSLog(@"%@",[content stringByDecodingHTMLEntities]);
-//                                 }
-//                                error:^(NSString *error) {
-//                                    NSLog(@"%@",error);
-//                                }];
+    [SOFService getQuestionContentWithQuestionID:[NSString stringWithFormat:@"%@",[obj objectForKey:@"question_id"]]
+                                 completeHandler:^(NSString *content) {
+                                     NSString *contentString = [content stringByDecodingHTMLEntities];
+                                     contentString = [contentString stringByReplacingOccurrencesOfString:@"<code" withString:@"<acode><code"];
+                                     contentString = [contentString stringByReplacingOccurrencesOfString:@"</code>" withString:@"</code></acode>"];
+                                     
+                                     NSArray *result = [self parseHtmlString:contentString WithTag:@"p"];
+                                     DetailViewController *detail = (DetailViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"DetailVC"];
+                                     detail.result = [result copy];
+                                     [self.navigationController pushViewController:detail animated:YES];
+
+                                     
+                                 }
+                                error:^(NSString *error) {
+                                    NSLog(@"%@",error);
+                                }];
+}
+
+-(id)parseHtmlString:(NSString *)htmlString WithTag:(NSString*)tag{
+    NSScanner* scanner = [NSScanner scannerWithString:htmlString];
+    NSMutableArray *paragraphs = [[NSMutableArray alloc] init];
+    
+    
+    
+    NSString *startTag = [NSString stringWithFormat:@"<%@",tag];
+    NSString *endTag = [NSString stringWithFormat:@"</%@",tag];
+    
+    
+    [scanner scanUpToString:startTag intoString:nil];
+    while (![scanner isAtEnd]) {
+        [scanner scanUpToString:@">" intoString:nil];
+        [scanner scanString:@">" intoString:nil];
+        NSString * text = nil;
+        [scanner scanUpToString:endTag intoString:&text];
+        if (text) {
+            DetailObject *obj;
+            NSString *type = @"";
+            if([tag isEqualToString:@"p"]){
+                if(text.length > 7){
+                    if([[text substringToIndex:7] isEqualToString:@"<acode>"]){
+                        text = [text stringByReplacingOccurrencesOfString:@"<acode><code>" withString:@""];
+                        text = [text stringByReplacingOccurrencesOfString:@"</code></acode>" withString:@""];
+                        type = @"code";
+                    }else {
+                        text = [text stringByReplacingOccurrencesOfString:@"<acode><code>" withString:@"(h)@"];
+                        text = [text stringByReplacingOccurrencesOfString:@"</code></acode>" withString:@"(h)"];
+                        type = @"content";
+                    }
+                }else {
+                    text = [text stringByReplacingOccurrencesOfString:@"<code>" withString:@"(h)"];
+                    text = [text stringByReplacingOccurrencesOfString:@"</code>" withString:@"(h)"];
+                    type = @"content";
+                }
+                
+                
+                
+                obj = [[DetailObject alloc] initWithType:type Content:text];
+                
+            }
+            [paragraphs addObject:obj];
+        }
+        [scanner scanUpToString:startTag intoString:nil];
+    }
+    return paragraphs;
 }
 
 - (void)didReceiveMemoryWarning {
