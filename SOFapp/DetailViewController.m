@@ -197,29 +197,7 @@
     
 }
 
--(float) getHeightForText:(NSString*) text withFont:(UIFont*) font andWidth:(float) width{
-    CGSize constraint = CGSizeMake(width , 20000.0f);
-    CGSize title_size;
-    float totalHeight;
-    
-    SEL selector = @selector(boundingRectWithSize:options:attributes:context:);
-    if ([text respondsToSelector:selector]) {
-        title_size = [text boundingRectWithSize:constraint
-                                        options:NSStringDrawingUsesLineFragmentOrigin
-                                     attributes:@{ NSFontAttributeName : font }
-                                        context:nil].size;
-        
-        totalHeight = ceil(title_size.height);
-    } else {
-        title_size = [text sizeWithFont:font
-                      constrainedToSize:constraint
-                          lineBreakMode:NSLineBreakByWordWrapping];
-        totalHeight = title_size.height ;
-    }
-    
-    CGFloat height = MAX(totalHeight, 40.0f);
-    return height;
-}
+
 
 
 
